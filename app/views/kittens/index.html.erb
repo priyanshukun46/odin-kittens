@@ -1,0 +1,13 @@
+
+<center><h1>UwU</h1></center>
+<h2>List of all Kittens : -- </h2>
+
+<div id ="kittens">
+  <% @kittens.each do |kitten| %>
+    <%= render kitten %>
+    <p>
+      <%= link_to "Show All Kitten", kitten %>
+    </p>
+  <% end %>
+  <%= link_to "New", new_kitten_path %>
+</div>
