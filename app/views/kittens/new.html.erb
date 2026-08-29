@@ -1,11 +1,3 @@
-<% content_for :title, "New Kitten" %>
-
-<h1>New Kitten</h1>
-
-<%= render "form", kitten: @kitten %>
-
-<br>
-
-<div>
-  <%= link_to "Back to home", kittens_path %>
-</div>
+<center><h2>New Kitten</h2></center>
+<%= render "forms", kitten: @kitten %>
+<%= link_to "back", root_path %>
