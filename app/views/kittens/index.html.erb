@@ -1,15 +1,19 @@
 <center><h1>Kittens</h1></center>
 
 <% @kittens.each do |kitten| %>
-<div>
-     <p>Name: <%= kitten.name %></p>
-     <p>Age: <%= kitten.age %></p>
-     <p>Cuteness = <%= kitten.cuteness %></p>
-    <p>Softness = <%= kitten.softness %></p>
-    <%= link_to "Edit", edit_kitten_path(kitten) %>
-    <%= link_to "Show", kitten_path(kitten) %>
-    <%= button_to "Delete", kitten_path(kitten), method: :delete, data: { turbo_confirm: "Are you sure?" } %>
+<div class=" card d-flex p-4 flex-col mb-3 ">
+    <div class="">
+        <p class="card-title">Name: <%= kitten.name %></p>
+        <p>Age: <%= kitten.age %></p>
+        <p>Cuteness = <%= kitten.cuteness %></p>
+        <p>Softness = <%= kitten.softness %></p>
+    </div>
+    <div>
+        <%= link_to "Edit", edit_kitten_path(kitten), class:"btn btn-secondary " %>
+        <%= link_to "Show", kitten_path(kitten), class:"btn btn-secondary" %>
+        <%= button_to "Delete", kitten_path(kitten), method: :delete, data: { turbo_confirm: "Are you sure?"}, class:"btn btn-primary m-1 "  %>
+    </div>
 </div>
 <% end %>
-<%= link_to "NEW", kittens_new_path %>
+<%= link_to "NEW", kittens_new_path ,class:"btn btn-dark m-3" %>
 
